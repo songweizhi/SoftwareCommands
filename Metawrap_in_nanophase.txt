@@ -1,0 +1,30 @@
+
+$ qsub -I -l select=1:ncpus=8:ngpus=1:mem=46gb,walltime=2:00:00
+$ mamba create -n nanophase -c nanophase nanophase -y
+These other steps are to make all the other programs in the nanophase environment work:
+# Get databases (GTDB already on Katana, so just get PLSDB - current version is 2021_06_23_v2)
+$ wget https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/download/plsdb.fna.bz2 && bunzip2 plsdb.fna.bz2
+# Set locations for databases
+$ echo "export GTDBTK_DATA_PATH=/path/to/release/package/" > $(dirname $(dirname `which nanophase`))/etc/conda/activate.d/np_db.sh
+## Change /path/to/release/package/ to the real location where you stored the GTDB
+$ echo "export PLSDB_PATH=/path/to/plsdb.fna" >> $(dirname $(dirname `which nanophase`))/etc/conda/activate.d/np_db.sh
+## Change /path/to/plsdb.fna to the real location where you stored the PLSDB
+$ conda deactivate && conda activate nanophase    ## require re-activate nanophase
+
+# Get nanophase test dataset
+
+cd /srv/scratch/z5438778/nanophase_testdata
+$ wget https://github.com/example-data/np-example/raw/main/np.test.tar && tar -xvf np.test.tar && rm -rf np.test.tar
+$ nanophase check 
+# All packages should be found successfully!
+
+
+##use the metawrap in nanophase
+$cd /srv/scratch/z5438778/ONT_Scopalina_microbe/With_Polishing/After_polishing_bins
+$ metawrap bin_refinement -o SemiBin_MetaBAT_superspecific_Metabate2 -A SemiBin -B MetaBAT_superspecific_Medaka -C Metabate2 -o SemiBin_MetaBAT_superspecific_Metabate2 -t 12 -x 5
+
+
+
+
+
+

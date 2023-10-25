@@ -1,0 +1,80 @@
+id	Group	ID	PRC	light	coxL	pdo	sox
+LSUCC0246	CHUG members	GNM356	1	1	1	1	1
+LSUCC0387	CHUG members	GNM4440	1	1	1	1	1
+HKCCD6035	CHUG members	GNM3890	1	1	0	1	1
+FZCC0069	CHUG members	GNM1670	1	1	0	1	1
+LSUCC1028	CHUG members	GNM358	1	1	0	1	1
+FZCC0188	CHUG members	GNM1683	1	1	0	1	1
+HKCCA1288	CHUG members	GNM3434	1	1	1	1	1
+HKCCA1065	CHUG members	GNM50571	1	1	1	1	1
+LSUCC0031	sister group	GNM225	0	1	0	1	1
+Roseicyclus_mahoneyensis_DSM_16097	sister group	GNM565	0	1	1	1	1
+Roseibacterium_elongatum_DFL-43	sister group	GNM1107	0	1	0	1	1
+Jannaschia sp. CCS1	sister group	GNM746	0	1	1	0	0
+Jannaschia_sp_EhC01	sister group	GNM747	0	1	1	1	1
+Nioella_nitratireducens_SSW136	outgroup	GNM1382	0	0	0	1	1
+Nioella_sediminis_JS7-11	outgroup	GNM1383	0	0	1	1	1
+Jannaschia_aquimarina_DSM_28248	outgroup	GNM425	0	1	0	0	0
+Jannaschia_pohangensis_DSM_19073	outgroup	GNM742	0	1	0	1	0
+Thalassobacter_stenotrophicus_DSM_16310	outgroup	GNM1232	0	1	1	1	1
+Dinoroseobacter shibae DFL12	outgroup	GNM694	0	1	1	1	1
+Rhodobacterales bacterium HTCC2083	PRC members	GNM1024	1	1	0	0	1
+Rhodobacterales bacterium HTCC2150	PRC members	GNM1025	1	0	1	1	1
+Rhodobacteraceae bacterium SB2	PRC members	GNM1031	1	1	1	1	1
+Rhodobacteraceae_bacterium_HIMB11	PRC members	GNM1017	1	1	1	0	1
+Planktomarina temperata RCA23	PRC members	GNM962	1	1	0	1	1
+Roseobacter sp. LE17	PRC members	GNM575	1	1	0	1	1
+HTCC2255	PRC members	GNM1055	1	1	0	0	1
+Phaeobacter caeruleus DSM24564	other Roseobacter	GNM1363	0	0	0	0	1
+Phaeobacter sp. Y4I	other Roseobacter	GNM1059	0	0	0	0	1
+Phaeobacter gallaeciensis ANG1	other Roseobacter	GNM774	0	0	0	0	0
+Leisingera methylohalidivorans MB2	other Roseobacter	GNM773	0	0	0	0	1
+Leisingera aquimarina R-26159	other Roseobacter	GNM1362	0	0	0	0	1
+Phaeobacter arcticus 20188	other Roseobacter	GNM1427	0	0	1	0	1
+Roseobacter sp. MED193	other Roseobacter	GNM1126	0	0	1	0	1
+Roseobacter sp. SK209-2-6	other Roseobacter	GNM1130	0	0	1	0	0
+Ruegeria sp. TrichCH4B	other Roseobacter	GNM1187	0	0	0	1	0
+Ruegeria sp. TM1040	other Roseobacter	GNM1177	0	0	0	0	0
+Phaeobacter gallaeciensis BS107	other Roseobacter	GNM495	0	0	1	0	1
+Phaeobacter gallaeciensis 2.10	other Roseobacter	GNM926	0	0	0	0	1
+Ruegeria sp. R11	other Roseobacter	GNM1176	0	0	0	0	1
+Rhodobacterales bacterium KLH11	other Roseobacter	GNM1026	0	0	1	0	0
+Ruegeria sp. TW15	other Roseobacter	GNM594	0	0	1	0	0
+Ruegeria lacuscaerulensis ITI-1157	other Roseobacter	GNM1186	0	0	1	1	1
+Ruegeria pomeroyi DSS-3	other Roseobacter	GNM1170	0	0	1	1	1
+Leisingera nanhaiensis NH52F	other Roseobacter	GNM1546	0	0	0	1	1
+Sulfitobacter sp. EE36	other Roseobacter	GNM1213	0	0	0	0	1
+Roseobacter sp. GAI101	other Roseobacter	GNM1125	0	0	1	1	1
+Oceanibulbus indolifex HEL45	other Roseobacter	GNM848	0	0	0	0	1
+Roseobacter litoralis Och149	other Roseobacter	GNM1121	0	1	1	1	1
+Roseobacter denitrificans OCh114	other Roseobacter	GNM1120	0	1	0	1	1
+Roseobacter sp. R2A57	other Roseobacter	GNM576	0	0	1	1	1
+Pelagibaca bermudensis HTCC2601	other Roseobacter	GNM915	0	0	0	1	1
+Citreicella sp. SE45	other Roseobacter	GNM684	0	0	1	1	1
+Citreicella SP. 357	other Roseobacter	GNM683	0	0	0	0	1
+Sagittula stellata E-37	other Roseobacter	GNM1179	0	0	0	1	1
+Oceanicola batsensis HTCC2597	other Roseobacter	GNM973	0	0	0	0	0
+Roseovarius sp. 217	other Roseobacter	GNM1148	0	1	1	1	1
+Roseovarius sp. TM1035	other Roseobacter	GNM1154	0	1	1	1	1
+Roseobacter sp. AzwK-3b	other Roseobacter	GNM1122	0	1	0	1	1
+Roseovarius nubinhibens ISM	other Roseobacter	GNM1146	0	0	0	0	1
+Loktanella vestfoldensis SKA53	other Roseobacter	GNM811	0	1	0	0	0
+Roseobacter sp. CCS2	other Roseobacter	GNM1123	0	1	0	0	0
+Loktanella sp. SE62	other Roseobacter	GNM444	0	1	0	1	1
+Octadecabacter antarcticus 307	other Roseobacter	GNM859	0	1	1	0	0
+Octadecabacter arcticus 238	other Roseobacter	GNM860	0	1	1	0	0
+Loktanella cinnabarina LL-001	other Roseobacter	GNM791	0	0	0	0	1
+Loktanella hongkongensis UST950701	other Roseobacter	GNM1367	0	0	0	0	1
+Wenxinia marina HY34	other Roseobacter	GNM1283	0	0	1	0	0
+Oceanicola granulosus HTCC2516	other Roseobacter	GNM855	0	0	0	0	0
+Litoreibacter_arenae_DSM_19593	other Roseobacter	GNM786	0	0	0	1	1
+Maritimibacter alkaliphilus HTCC2654	other Roseobacter	GNM833	0	0	0	1	1
+Oceaniovalibus_guishaninsula_JLT2003	other Roseobacter	GNM858	0	0	0	0	0
+Paracoccus_aminophilus_JCM_7686	other Roseobacter	GNM875	0	0	0	1	0
+Paracoccus_sulfuroxidans_CGMCC_1.5364	other Roseobacter	GNM483	0	0	0	0	0
+Paracoccus_zeaxanthinifaciens_ATCC21588	other Roseobacter	GNM1419	0	0	0	0	0
+Rhodobacter_capsulatus_SB_1003	other Roseobacter	GNM1066	0	1	0	1	0
+Pseudorhodobacter_ferrugineus_DSM5888	other Roseobacter	GNM1431	0	1	1	1	1
+Rhodobacter_sp_SW2	other Roseobacter	GNM1089	0	1	0	1	0
+Rhodobacter_sphaeroides_ATCC_17025	other Roseobacter	GNM1080	0	1	0	1	1
+Gemmobacter_nectariphilus_DSM15620	other Roseobacter	GNM1306	0	0	0	1	1

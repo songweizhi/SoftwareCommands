@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SankeyIDb59e771935df</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<style type="text/css">
+body {
+  color: #444444;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 75%;
+  }
+  a {
+  color: #4D87C7;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+ <!-- Sankey generated in R 3.4.2 by googleVis 0.6.2 package -->
+<!-- Tue Dec  4 10:20:40 2018 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataSankeyIDb59e771935df () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.1",
+265300
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.1",
+"MyCC__MSPA_D6_Cluster.2",
+265300
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.11",
+35567
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.11",
+"MyCC__MSPA_D6_Cluster.1",
+35567
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.11",
+76611
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.11",
+"MyCC__MSPA_D6_Cluster.4",
+76611
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.12",
+576025
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.12",
+"MyCC__MSPA_D6_Cluster.7",
+576025
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.16",
+8798
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.16",
+"MyCC__MSPA_D6_Cluster.6",
+8798
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.2",
+59903
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.2",
+"MyCC__MSPA_D6_Cluster.2",
+59903
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.21",
+60118
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.21",
+"MyCC__MSPA_D6_Cluster.1",
+60118
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.3",
+17593
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.3",
+"MyCC__MSPA_D6_Cluster.2",
+17593
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.4",
+17510
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.4",
+"MyCC__MSPA_D6_Cluster.2",
+17510
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.5",
+15074
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.5",
+"MyCC__MSPA_D6_Cluster.2",
+15074
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.6",
+2533
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.6",
+"MyCC__MSPA_D6_Cluster.2",
+2533
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_0",
+"MetaBAT2__MSPA_D6_metabat_bin.7",
+18606
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.7",
+"MyCC__MSPA_D6_Cluster.4",
+18606
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_1",
+"MetaBAT2__MSPA_D6_metabat_bin.14",
+378430
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.14",
+"MyCC__MSPA_D6_Cluster.6",
+378430
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_1",
+"MetaBAT2__MSPA_D6_metabat_bin.16",
+313883
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.16",
+"MyCC__MSPA_D6_Cluster.6",
+313883
+],
+[
+"AutoMeta__cluster_DBSCAN_round1_1",
+"MetaBAT2__MSPA_D6_metabat_bin.2",
+2028
+],
+[
+"MetaBAT2__MSPA_D6_metabat_bin.2",
+"MyCC__MSPA_D6_Cluster.6",
+2028
+] 
+];
+data.addColumn('string','C1');
+data.addColumn('string','C2');
+data.addColumn('number','Length_bp');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartSankeyIDb59e771935df() {
+var data = gvisDataSankeyIDb59e771935df();
+var options = {};
+options["width"] = 1000;
+options["height"] = 630;
+options["sankey"] = {node:{colorMode:'unique', labelPadding: 10 },link:{colorMode:'source'}};
+
+
+    var chart = new google.visualization.Sankey(
+    document.getElementById('SankeyIDb59e771935df')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "sankey";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartSankeyIDb59e771935df);
+})();
+function displayChartSankeyIDb59e771935df() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartSankeyIDb59e771935df"></script>
+ 
+<!-- divChart -->
+  
+<div id="SankeyIDb59e771935df" 
+  style="width: 1000; height: 630;">
+</div>
+ <div><span>Data: my_data &#8226; Chart ID: <a href="Chart_SankeyIDb59e771935df.html">SankeyIDb59e771935df</a> &#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br /> 
+<!-- htmlFooter -->
+<span> 
+  R version 3.4.2 (2017-09-28) 
+  &#8226; <a href="https://developers.google.com/terms/">Google Terms of Use</a> &#8226; <a href="https://google-developers.appspot.com/chart/interactive/docs/gallery/sankey">Documentation and Data Policy</a>
+</span></div>
+</body>
+</html>

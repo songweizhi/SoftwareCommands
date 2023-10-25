@@ -1,0 +1,74 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=1
+#PBS -l mem=10gb
+#PBS -l walltime=02:59:00
+#PBS -j oe
+#PBS -M wythe1987@163.com
+#PBS -m ae
+
+module load java/8u121
+module load fastqc/0.11.8
+cd /srv/scratch/z5039045/Flow_cell_biofilm/raw_reads/run_2
+java -jar /apps/trimmomatic/0.38/trimmomatic-0.38.jar PE 1D18_S12_R1_001.fastq 1D18_S12_R2_001.fastq 1D18_S12_R1_001_Q30_P.fastq 1D18_S12_R1_001_Q30_UP.fastq 1D18_S12_R2_001_Q30_P.fastq 1D18_S12_R2_001_Q30_UP.fastq ILLUMINACLIP:/apps/trimmomatic/0.38/adapters/TruSeq3-PE-2.fa:2:30:10 LEADING:30 TRAILING:30 CROP:240 HEADCROP:10 SLIDINGWINDOW:6:30 MINLEN:36
+fastqc 1D18_S12_R1_001_Q30_P.fastq 1D18_S12_R2_001_Q30_P.fastq
+
+
+
+
+java -jar ~/Tools/Trimmomatic-0.36/trimmomatic-0.36.jar PE -threads 12 -phred33 -trimlog 57884_1_PE_480bp_MM_AGRF_H5VJHBCX2_TAAGGCGA-GCGTAAGA_L001.log 57884_1_PE_480bp_MM_AGRF_H5VJHBCX2_TAAGGCGA-GCGTAAGA_L001_R1.fastq.gz 57884_1_PE_480bp_MM_AGRF_H5VJHBCX2_TAAGGCGA-GCGTAAGA_L001_R2.fastq.gz 57884_1_PE_480bp_MM_AGRF_H5VJHBCX2_TAAGGCGA-GCGTAAGA_L001_pairedForward.fastq.gz 57884_1_PE_480bp_MM_AGRF_H5VJHBCX2_TAAGGCGA-GCGTAAGA_L001_unpairedForward.fastq.gz 57884_1_PE_480bp_MM_AGRF_H5VJHBCX2_TAAGGCGA-GCGTAAGA_L001_pairedReverse.fastq.gz 57884_1_PE_480bp_MM_AGRF_H5VJHBCX2_TAAGGCGA-GCGTAAGA_L001_unpairedReverse.fastq.gz ILLUMINACLIP:Nextera.fa:2:30:10 HEADCROP:15 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:100
+
+
+# Du
+trimmomatic PE -threads 30 -phred33 MBR06_10CM.R1.raw.fastq.gz MBR06_10CM.R2.raw.fastq.gz mbr06_10cm_r1_p.fastq mbr06_10cm_r1_up.fastq mbr06_10cm_r2_p.fastq mbr06_10cm_r2_up.fastq CROP:145 HEADCROP:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:25 MINLEN:50
+
+
+
+
+
+# shidi
+HEADCROP:20 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:25 MINLEN:50
+
+
+
+
+
+module load java/8u121
+module load fastqc/0.11.8
+cd /srv/scratch/z5039045/Flow_cell_biofilm/raw_reads/run_2
+java -jar /apps/trimmomatic/0.38/trimmomatic-0.38.jar PE 1D18_S12_R1_001.fastq 1D18_S12_R2_001.fastq 1D18_S12_R1_001_Q30_P.fastq 1D18_S12_R1_001_Q30_UP.fastq 1D18_S12_R2_001_Q30_P.fastq 1D18_S12_R2_001_Q30_UP.fastq ILLUMINACLIP:/apps/trimmomatic/0.38/adapters/TruSeq3-PE-2.fa:2:30:10 HEADCROP:10 CROP:135 LEADING:30 TRAILING:30 SLIDINGWINDOW:6:30 MINLEN:50
+fastqc 1D18_S12_R1_001_Q30_P.fastq 1D18_S12_R2_001_Q30_P.fastq
+
+
+
+java -jar /apps/trimmomatic/0.38/trimmomatic-0.38.jar PE 
+
+1D18_S12_R1_001.fastq 1D18_S12_R2_001.fastq 
+
+1D18_S12_R1_001_Q30_P.fastq 1D18_S12_R1_001_Q30_UP.fastq 
+
+1D18_S12_R2_001_Q30_P.fastq 1D18_S12_R2_001_Q30_UP.fastq 
+
+
+ILLUMINACLIP:/apps/trimmomatic/0.38/adapters/TruSeq3-PE-2.fa:2:30:10 LEADING:30 TRAILING:30 CROP:240 HEADCROP:10 SLIDINGWINDOW:6:30 MINLEN:36
+
+
+
+(mypython3env) [z5039045@k209 adapters]$ cat TruSeq3-PE.fa
+>PrefixPE/1
+TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+>PrefixPE/2
+GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT(mypython3env) [z5039045@k209 adapters]$ 
+(mypython3env) [z5039045@k209 adapters]$ 
+(mypython3env) [z5039045@k209 adapters]$ cat TruSeq3-PE-2.fa
+>PrefixPE/1
+TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+>PrefixPE/2
+GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
+>PE1
+TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+>PE1_rc
+AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA
+>PE2
+GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
+>PE2_rc
+AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC(mypython3env) [z5039045@k209 adapters]$ 

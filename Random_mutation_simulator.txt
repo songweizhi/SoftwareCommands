@@ -1,0 +1,14 @@
+# commands for running random_mutation_simulator.py
+
+module load python/3.5.2
+module load blast+/2.2.31
+
+python3 /srv/scratch/z5039045/Scripts/random_mutation_simulator.py -in example.fasta -identity 95 -ratio 1-0-1-1 &
+python3 /srv/scratch/z5039045/Scripts/random_mutation_simulator.py -in example.fasta -identity 90 -ratio 1-0-1-1 &
+python3 /srv/scratch/z5039045/Scripts/random_mutation_simulator.py -in example.fasta -identity 85 -ratio 1-0-1-1 &
+python3 /srv/scratch/z5039045/Scripts/random_mutation_simulator.py -in example.fasta -identity 80 -ratio 1-0-1-1 &
+python3 /srv/scratch/z5039045/Scripts/random_mutation_simulator.py -in example.fasta -identity 75 -ratio 1-0-1-1 &
+python3 /srv/scratch/z5039045/Scripts/random_mutation_simulator.py -in example.fasta -identity 70 -ratio 1-0-1-1 &
+
+
+

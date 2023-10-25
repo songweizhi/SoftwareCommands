@@ -1,0 +1,152 @@
+
+# combine files for each SMRT cell
+cd /srv/scratch/z5039045/PacBio/2018-08-08_For_submission/raw_reads/AAA
+tar cvzf m151114_230846_42272_c100936552550000001823207905251627_s1_p0.tar.gz m151114_230846_42272_c100936552550000001823207905251627_s1_p0*.gz
+tar cvzf m151115_032807_42272_c100936522550000001823207905251650_s1_p0.tar.gz m151115_032807_42272_c100936522550000001823207905251650_s1_p0*.gz
+tar cvzf m151119_095519_42272_c100936522550000001823207905251656_s1_p0.tar.gz m151119_095519_42272_c100936522550000001823207905251656_s1_p0*.gz
+tar cvzf m151119_141406_42272_c100936522550000001823207905251657_s1_p0.tar.gz m151119_141406_42272_c100936522550000001823207905251657_s1_p0*.gz
+tar cvzf m151119_183319_42272_c100936702550000001823207905251610_s1_p0.tar.gz m151119_183319_42272_c100936702550000001823207905251610_s1_p0*.gz
+tar cvzf m151119_225232_42272_c100936702550000001823207905251611_s1_p0.tar.gz m151119_225232_42272_c100936702550000001823207905251611_s1_p0*.gz
+tar cvzf m151120_031201_42272_c100936702550000001823207905251612_s1_p0.tar.gz m151120_031201_42272_c100936702550000001823207905251612_s1_p0*.gz
+tar cvzf m151120_073101_42272_c100936702550000001823207905251613_s1_p0.tar.gz m151120_073101_42272_c100936702550000001823207905251613_s1_p0*.gz
+
+
+# upload to NCBI with command line ftp 
+# https://www.ncbi.nlm.nih.gov/sra/docs/submitfiles/
+cd /srv/scratch/z5039045/PacBio/2018-08-08_For_submission/raw_reads/AAA
+ftp -i
+open ftp-private.ncbi.nlm.nih.gov
+subftp
+w4pYB9VQ
+
+# upload files separately
+cd uploads/songwz03@gmail.com_m86RuJXt/PacBio_10_genomes
+put m151115_032807_42272_c100936522550000001823207905251650_s1_p0.bas.h5.gz
+put m151115_032807_42272_c100936522550000001823207905251650_s1_p0.metadata.xml.gz
+put m151119_141406_42272_c100936522550000001823207905251657_s1_p0.bas.h5.gz
+put m151119_141406_42272_c100936522550000001823207905251657_s1_p0.metadata.xml.gz
+put m151119_183319_42272_c100936702550000001823207905251610_s1_p0.bas.h5.gz
+put m151119_183319_42272_c100936702550000001823207905251610_s1_p0.metadata.xml.gz
+put m151119_225232_42272_c100936702550000001823207905251611_s1_p0.bas.h5.gz
+put m151119_225232_42272_c100936702550000001823207905251611_s1_p0.metadata.xml.gz
+put m151120_031201_42272_c100936702550000001823207905251612_s1_p0.bas.h5.gz
+put m151120_031201_42272_c100936702550000001823207905251612_s1_p0.metadata.xml.gz
+put m151120_073101_42272_c100936702550000001823207905251613_s1_p0.bas.h5.gz
+put m151120_073101_42272_c100936702550000001823207905251613_s1_p0.metadata.xml.gz
+put m151114_230846_42272_c100936552550000001823207905251627_s1_p0.1.bax.h5.gz
+put m151114_230846_42272_c100936552550000001823207905251627_s1_p0.2.bax.h5.gz
+put m151114_230846_42272_c100936552550000001823207905251627_s1_p0.3.bax.h5.gz
+put m151120_073101_42272_c100936702550000001823207905251613_s1_p0.1.bax.h5.gz
+put m151120_073101_42272_c100936702550000001823207905251613_s1_p0.2.bax.h5.gz
+put m151120_073101_42272_c100936702550000001823207905251613_s1_p0.3.bax.h5.gz
+put m151115_032807_42272_c100936522550000001823207905251650_s1_p0.1.bax.h5.gz
+put m151115_032807_42272_c100936522550000001823207905251650_s1_p0.2.bax.h5.gz
+put m151115_032807_42272_c100936522550000001823207905251650_s1_p0.3.bax.h5.gz
+put m151119_141406_42272_c100936522550000001823207905251657_s1_p0.1.bax.h5.gz
+put m151119_141406_42272_c100936522550000001823207905251657_s1_p0.2.bax.h5.gz
+put m151119_141406_42272_c100936522550000001823207905251657_s1_p0.3.bax.h5.gz
+put m151119_183319_42272_c100936702550000001823207905251610_s1_p0.1.bax.h5.gz
+put m151119_183319_42272_c100936702550000001823207905251610_s1_p0.2.bax.h5.gz
+put m151119_183319_42272_c100936702550000001823207905251610_s1_p0.3.bax.h5.gz
+put m151119_225232_42272_c100936702550000001823207905251611_s1_p0.1.bax.h5.gz
+put m151119_225232_42272_c100936702550000001823207905251611_s1_p0.2.bax.h5.gz
+put m151119_225232_42272_c100936702550000001823207905251611_s1_p0.3.bax.h5.gz
+put m151120_031201_42272_c100936702550000001823207905251612_s1_p0.1.bax.h5.gz
+put m151120_031201_42272_c100936702550000001823207905251612_s1_p0.2.bax.h5.gz
+put m151120_031201_42272_c100936702550000001823207905251612_s1_p0.3.bax.h5.gz
+
+# upload combined files for each SMRT cell
+cd uploads/songwz03@gmail.com_m86RuJXt/PacBio_10_genomes_tar_gz
+put m151114_230846_42272_c100936552550000001823207905251627_s1_p0.tar.gz
+put m151119_225232_42272_c100936702550000001823207905251611_s1_p0.tar.gz
+put m151120_031201_42272_c100936702550000001823207905251612_s1_p0.tar.gz
+put m151115_032807_42272_c100936522550000001823207905251650_s1_p0.tar.gz
+put m151119_095519_42272_c100936522550000001823207905251656_s1_p0.tar.gz
+put m151119_141406_42272_c100936522550000001823207905251657_s1_p0.tar.gz
+put m151119_183319_42272_c100936702550000001823207905251610_s1_p0.tar.gz
+put m151120_073101_42272_c100936702550000001823207905251613_s1_p0.tar.gz
+
+
+
+
+# backup information 
+PRJNA485019	NA	PacBio_10_bacteria	PacBio sequencing of 10 marine bacteria	SMRTbell	pooled genomic DNA from 10 bacterial strains	size fractionation	single	PACBIO_SMRT	PacBio RS II	The mixed gDNA was subjected to 15-50 kb BluePippin size selection (Sage Science, Beverly, MA, USA) and a single library was prepared using the SMRTbell template preparation kit 1.0 (Pacific Biosciences, Menlo Park, CA) according to the manufacturers instructions.	PacBio_HDF5		m151119_095519_42272_c100936522550000001823207905251656_s1_p0.1.bax.h5.gz,m151119_141406_42272_c100936522550000001823207905251657_s1_p0.1.bax.h5.gz,m151114_230846_42272_c100936552550000001823207905251627_s1_p0.1.bax.h5.gz,m151119_183319_42272_c100936702550000001823207905251610_s1_p0.1.bax.h5.gz,m151115_032807_42272_c100936522550000001823207905251650_s1_p0.1.bax.h5.gz,m151119_225232_42272_c100936702550000001823207905251611_s1_p0.1.bax.h5.gz,m151120_031201_42272_c100936702550000001823207905251612_s1_p0.1.bax.h5.gz,m151120_073101_42272_c100936702550000001823207905251613_s1_p0.1.bax.h5.gz	m151119_095519_42272_c100936522550000001823207905251656_s1_p0.2.bax.h5.gz,m151119_141406_42272_c100936522550000001823207905251657_s1_p0.2.bax.h5.gz,m151114_230846_42272_c100936552550000001823207905251627_s1_p0.2.bax.h5.gz,m151119_183319_42272_c100936702550000001823207905251610_s1_p0.2.bax.h5.gz,m151115_032807_42272_c100936522550000001823207905251650_s1_p0.2.bax.h5.gz,m151119_225232_42272_c100936702550000001823207905251611_s1_p0.2.bax.h5.gz,m151120_031201_42272_c100936702550000001823207905251612_s1_p0.2.bax.h5.gz,m151120_073101_42272_c100936702550000001823207905251613_s1_p0.2.bax.h5.gz	m151119_095519_42272_c100936522550000001823207905251656_s1_p0.3.bax.h5.gz,m151119_141406_42272_c100936522550000001823207905251657_s1_p0.3.bax.h5.gz,m151114_230846_42272_c100936552550000001823207905251627_s1_p0.3.bax.h5.gz,m151119_183319_42272_c100936702550000001823207905251610_s1_p0.3.bax.h5.gz,m151115_032807_42272_c100936522550000001823207905251650_s1_p0.3.bax.h5.gz,m151119_225232_42272_c100936702550000001823207905251611_s1_p0.3.bax.h5.gz,m151120_031201_42272_c100936702550000001823207905251612_s1_p0.3.bax.h5.gz,m151120_073101_42272_c100936702550000001823207905251613_s1_p0.3.bax.h5.gz	m151119_095519_42272_c100936522550000001823207905251656_s1_p0.bas.h5.gz,m151119_141406_42272_c100936522550000001823207905251657_s1_p0.bas.h5.gz,m151114_230846_42272_c100936552550000001823207905251627_s1_p0.bas.h5.gz,m151119_183319_42272_c100936702550000001823207905251610_s1_p0.bas.h5.gz,m151115_032807_42272_c100936522550000001823207905251650_s1_p0.bas.h5.gz,m151119_225232_42272_c100936702550000001823207905251611_s1_p0.bas.h5.gz,m151120_031201_42272_c100936702550000001823207905251612_s1_p0.bas.h5.gz,m151120_073101_42272_c100936702550000001823207905251613_s1_p0.bas.h5.gz	m151119_095519_42272_c100936522550000001823207905251656_s1_p0.metadata.xml.gz,m151119_141406_42272_c100936522550000001823207905251657_s1_p0.metadata.xml.gz,m151114_230846_42272_c100936552550000001823207905251627_s1_p0.metadata.xml.gz,m151119_183319_42272_c100936702550000001823207905251610_s1_p0.metadata.xml.gz,m151115_032807_42272_c100936522550000001823207905251650_s1_p0.metadata.xml.gz,m151119_225232_42272_c100936702550000001823207905251611_s1_p0.metadata.xml.gz,m151120_031201_42272_c100936702550000001823207905251612_s1_p0.metadata.xml.gz,m151120_073101_42272_c100936702550000001823207905251613_s1_p0.metadata.xml.gz			
+PRJNA485019	NA	PacBio_10_bacteria	PacBio sequencing of 10 marine bacteria	SMRTbell	pooled genomic DNA from 10 bacterial strains	size fractionation	single	PACBIO_SMRT	PacBio RS II	The mixed gDNA was subjected to 15-50 kb BluePippin size selection (Sage Science, Beverly, MA, USA) and a single library was prepared using the SMRTbell template preparation kit 1.0 (Pacific Biosciences, Menlo Park, CA) according to the manufacturer’s instructions. 	PacBio_HDF5		m151119_095519_42272_c100936522550000001823207905251656_s1_p0.1.bax.h5.gz	m151119_095519_42272_c100936522550000001823207905251656_s1_p0.2.bax.h5.gz	m151119_095519_42272_c100936522550000001823207905251656_s1_p0.3.bax.h5.gz	m151119_095519_42272_c100936522550000001823207905251656_s1_p0.bas.h5.gz	m151119_095519_42272_c100936522550000001823207905251656_s1_p0.metadata.xml.gz			
+
+Accession    Sample Name    SPUID    Organism    Tax ID    Strain    BioProject
+SAMN09780815    PacBio genome sequence of Alteromonas sp. BL110    PacBio genome sequence of Alteromonas sp. BL110    Alteromonas sp. BL110    1714845    BL110    PRJNA485019
+SAMN09780816    PacBio genome sequence of Aquimarina sp. AD1    PacBio genome sequence of Aquimarina sp. AD1    Aquimarina sp. AD1    1714848    AD1    PRJNA485019
+SAMN09780817    PacBio genome sequence of Aquimarina sp. AD10    PacBio genome sequence of Aquimarina sp. AD10    Aquimarina sp. AD10    1714849    AD10    PRJNA485019
+SAMN09780818    PacBio genome sequence of Flavobacteriaceae bacterium AU392    PacBio genome sequence of Flavobacteriaceae bacterium AU392    Flavobacteriaceae bacterium    1871037    AU392    PRJNA485019
+SAMN09780819    PacBio genome sequence of Aquimarina sp. BL5    PacBio genome sequence of Aquimarina sp. BL5    Aquimarina sp. BL5    1714860    BL5    PRJNA485019
+SAMN09780820    PacBio genome sequence of Pseudoalteromonas tunicata D2    PacBio genome sequence of Pseudoalteromonas tunicata D2    Pseudoalteromonas tunicata    314281    D2    PRJNA485019
+SAMN09780821    PacBio genome sequence of Phaeobacter sp. LSS9    PacBio genome sequence of Phaeobacter sp. LSS9    Phaeobacter sp. LSS9    681157    LSS9    PRJNA485019
+SAMN09780822    PacBio genome sequence of Phaeobacter inhibens 2.10    PacBio genome sequence of Phaeobacter inhibens 2.10    Phaeobacter inhibens    221822    2.10    PRJNA485019
+SAMN09780823    PacBio genome sequence of Phaeobacter inhibens BS107    PacBio genome sequence of Phaeobacter inhibens BS107 Phaeobacter inhibens    221822    BS107    PRJNA485019
+SAMN09780824    PacBio genome sequence of Ruegeria sp. AD91A    PacBio genome sequence of Ruegeria sp. AD91A    Ruegeria sp. AD91A    2293862    AD91A    PRJNA485019
+
+
+
+name for the study:
+
+Please provide a short descriptive title for the study: (*)
+
+Please provide an abstract to describe the study in detail: (*)
+
+
+
+
+
+
+PacBio genome sequence of Alteromonas sp. BL110
+PacBio genome sequence of Aquimarina sp. AD1
+PacBio genome sequence of Aquimarina sp. AD10
+PacBio genome sequence of Flavobacteriaceae bacterium AU392
+PacBio genome sequence of Aquimarina sp. BL5
+PacBio genome sequence of Pseudoalteromonas tunicata D2
+PacBio genome sequence of Phaeobacter sp. LSS9
+PacBio genome sequence of Phaeobacter inhibens 2.10
+PacBio genome sequence of Phaeobacter inhibens BS107
+PacBio genome sequence of Ruegeria sp. AD91A
+
+
+
+
+
+
+Project title:
+PacBio sequencing of 10 host-associated marine bacteria genomes 
+
+
+Public description:
+High-quality, completed genomes are of critical importance for the understanding of the functions of marine bacteria and their interactions with host organisms. PacBio sequencing technology provides a powerful way to get high-quality completed genomes or closing gaps of current draft genomes. Ten high-quality, completed genomes were obtained with PacBio sequencing technology.
+
+
+sample name:
+Pooled genomic DNA of ten marine bacteria
+
+
+Alteromonas sp. BL110, 
+Aquimarina sp. AD1, 
+Aquimarina sp. AD10, 
+Flavobacteriaceae bacterium AU392, 
+Aquimarina sp. BL5, 
+Pseudoalteromonas tunicata D2, 
+Phaeobacter sp. LSS9, 
+Phaeobacter inhibens 2.10, 
+Phaeobacter inhibens BS107, 
+Ruegeria sp. AD91A
+
+Alteromonas sp., Aquimarina sp., Flavobacteriaceae bacterium, Pseudoalteromonas tunicata, Phaeobacter sp., Phaeobacter inhibens, Ruegeria sp.
+Alteromonas sp. BL110, Aquimarina sp. AD1, Aquimarina sp. AD10, Flavobacteriaceae bacterium AU392, Aquimarina sp. BL5, Pseudoalteromonas tunicata D2, Phaeobacter sp. LSS9, Phaeobacter inhibens 2.10, Phaeobacter inhibens BS107, Ruegeria sp. AD91A
+
+
+
+
+
+
+
+
+
+
+

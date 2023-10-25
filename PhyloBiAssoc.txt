@@ -1,0 +1,32 @@
+
+# setup environment for running PhyloBiAssoc.R on server
+conda env create -n gapseq-dev --file gapseq_env.yml
+conda activate gapseq-dev
+R -e 'install.packages("ape", repos="http://cran.us.r-project.org")'
+R -e 'install.packages("phytools", repos="http://cran.us.r-project.org")'
+R -e 'install.packages("optparse", repos="http://cran.us.r-project.org")'
+pip install statsmodels
+
+
+# run PhyloBiAssoc.R on server
+conda activate gapseq-dev
+cd /home-user/wzsong/Japonicum/get_pwy_PA_stats
+Rscript PhyloBiAssoc.R -t genome.tree -d input_df.txt > output_stats.txt
+submitHPC.sh --cmd "Rscript PhyloBiAssoc.R -t genome.tree -d input_df.txt > output_stats.txt" -n 1 -c PhyloBiAssoc
+
+
+# setup environment for running PhyloBiAssoc.R on server
+conda env create -n gapseq-dev --file gapseq_env.yml
+conda activate gapseq-dev
+R -e 'install.packages("ape", repos="http://cran.us.r-project.org")'
+R -e 'install.packages("phytools", repos="http://cran.us.r-project.org")'
+R -e 'install.packages("optparse", repos="http://cran.us.r-project.org")'
+pip install statsmodels
+
+
+# run PhyloBiAssoc.R on server
+conda activate gapseq-dev
+cd /home-user/wzsong/Japonicum/get_pwy_PA_stats
+Rscript PhyloBiAssoc.R -t genome.tree -d input_df.txt > output_stats.txt
+submitHPC.sh --cmd "Rscript PhyloBiAssoc.R -t genome.tree -d input_df.txt > output_stats.txt" -n 1 -c PhyloBiAssoc
+

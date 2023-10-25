@@ -1,0 +1,11 @@
+X.OTU.ID	Sample01	Sample02	Sample03	Sample04	Sample05	Sample06	Sample07	Sample08	Sample09	Sample10	Taxonomy
+Zotu1	1872	2429	1356	3064	7077	6900	4622	2672	1001	2265	Bacteria(100.0);Proteobacteria(100.0);Gammaproteobacteria(100.0);Xanthomonadales(100.0);Rhodanobacteraceae(100.0);Rhodanobacter(97.2);Rhodanobacter(97.2)
+Zotu10	707	0	1	3	50	0	0	4	1	4	Bacteria(100.0);Proteobacteria(85.7321428571);Gammaproteobacteria(85.7321428571);Burkholderiales(85.7321428571);Burkholderiaceae(85.7321428571);Ralstonia(85.6071428571);Ralstonia(85.6071428571)
+Zotu2	1034	2666	722	1811	5120	11302	5968	2018	612	1311	Bacteria(100.0);Proteobacteria(100.0);Gammaproteobacteria(100.0);Xanthomonadales(100.0);Rhodanobacteraceae(100.0);Rhodanobacter(100.0);Rhodanobacter(100.0)
+Zotu3	1530	1	0	3	82	5	2	3	0	2	Bacteria(100.0);Proteobacteria(100.0);Gammaproteobacteria(100.0);Xanthomonadales(100.0);Rhodanobacteraceae(100.0);Rhodanobacter(100.0);Rhodanobacter(100.0)
+Zotu4	3023	3	22	2	240	3	4	0	0	1	Bacteria(100.0);Proteobacteria(100.0);Gammaproteobacteria(100.0);Xanthomonadales(100.0);Rhodanobacteraceae(100.0);Rhodanobacter(61.5);Rhodanobacter(61.5)
+Zotu5	864	283	517	1104	2341	959	858	975	303	610	Bacteria(100.0);Proteobacteria(100.0);Gammaproteobacteria(100.0);Xanthomonadales(100.0);Rhodanobacteraceae(100.0);Rhodanobacter(87.3011904762);Rhodanobacter(87.3011904762)
+Zotu6	841	64	85	145	301	214	102	176	45	129	Bacteria(100.0);Proteobacteria(100.0);Gammaproteobacteria(100.0);Xanthomonadales(100.0);Rhodanobacteraceae(100.0);Rhodanobacter(100.0);Rhodanobacter(100.0)
+Zotu7	824	55	53	84	448	590	166	207	31	88	Bacteria(100.0);Proteobacteria(100.0);Gammaproteobacteria(100.0);Xanthomonadales(100.0);Rhodanobacteraceae(100.0);Rhodanobacter(100.0);Rhodanobacter(100.0)
+Zotu8	818	1547	525	1084	4823	6260	3773	1587	395	849	Bacteria(100.0);Proteobacteria(100.0);Gammaproteobacteria(100.0);Xanthomonadales(100.0);Rhodanobacteraceae(100.0);Rhodanobacter(90.9166666667);Rhodanobacter(90.9166666667)
+Zotu9	593	730	427	1076	3738	3769	1854	1141	283	618	Unclassified
