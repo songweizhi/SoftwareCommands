@@ -110,7 +110,6 @@ git remote add SoftwareCommands https://github.com/songweizhi/SoftwareCommands.g
 git push -u SoftwareCommands master
 
 
-
 ####################################### Wiki pages #######################################
 
 # Clones the wiki locally
