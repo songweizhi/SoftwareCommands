@@ -22,13 +22,22 @@ install.packages("circlize")
 install.packages("ape")
 
 
-# run MetaCHIP1
+##########################################################################################
+
+##### run MetaCHIP1 #####
+
+# example data are here: https://github.com/songweizhi/MetaCHIP/tree/master/input_file_examples
 cd /scratch/PI/ocessongwz/MetaCHIP_wd/MetaCHIP1_input_file_examples
 MetaCHIP PI -p HumanGut -r c -t 6 -i human_gut_bins -x fasta -taxon human_gut_bins_GTDB.tsv
 MetaCHIP BP -p HumanGut -r c -t 6
 
+cd /srv/scratch/z5039045/MetaCHIP_demo
+MetaCHIP PI -i NS_37bins -taxon NorthSea_GTDB.tsv -p NorthSea -r pcofg -x fasta -t 12
+MetaCHIP BP -p NorthSea -r pcofg -t 12
 
-# run MetaCHIP2
+
+##### run MetaCHIP2 #####
+
 module load anaconda3
 source activate metachip_env
 cd /scratch/PI/ocessongwz/MetaCHIP_wd
@@ -36,7 +45,5 @@ MetaCHIP2 detect -i S2_sal_fde_gbk -x gbk -c S2_sal_fde_taxon.tsv -r pco -p S2_s
 MetaCHIP2 detect -i S2_sal_fde_gbk -x gbk -c S2_sal_fde_taxon.tsv -r pco -p S2_sal_fde_mmseqs -t 6 -s S2_sal_fde_rooted.tree -f -mmseqs
 
 
-##########################################################################################
-##########################################################################################
-##########################################################################################
+
 
