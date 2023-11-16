@@ -1,0 +1,15 @@
+
+# run_1.tar.gz
+https://filesender.aarnet.edu.au/download.php?token=33e6c557-a097-4a66-9b06-bb1f7bda6175&files_ids=21003546
+
+# run_2.tar.gz
+https://filesender.aarnet.edu.au/download.php?token=33e6c557-a097-4a66-9b06-bb1f7bda6175&files_ids=21003541
+
+# run_3.tar.gz
+https://filesender.aarnet.edu.au/download.php?token=33e6c557-a097-4a66-9b06-bb1f7bda6175&files_ids=21003536
+
+
+# wget
+wget "https://filesender.aarnet.edu.au/download.php?token=33e6c557-a097-4a66-9b06-bb1f7bda6175&files_ids=21003546" -O run_1.tar.gz -t 0
+wget "https://filesender.aarnet.edu.au/download.php?token=33e6c557-a097-4a66-9b06-bb1f7bda6175&files_ids=21003541" -O run_2.tar.gz -t 0
+wget "https://filesender.aarnet.edu.au/download.php?token=33e6c557-a097-4a66-9b06-bb1f7bda6175&files_ids=21003536" -O run_3.tar.gz -t 0
