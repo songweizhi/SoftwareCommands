@@ -1,8 +1,24 @@
 
-# install prokka
+############################## install prokka on HKUST hpc3 ##############################
+
+module load anaconda3
 conda create -n prokka
 conda activate prokka
 conda install -c conda-forge -c bioconda -c defaults prokka
+conda install -c conda-forge perl-xml-parser
+cpan install XML::Simple
+cpan install Bio::Root::Version
+conda install -c conda-forge zstd
+
+
+############################## running prokka on HKUST hpc3 ##############################
+
+module load anaconda3
+conda activate prokka
+prokka --force --compliant --cpus 12 --kingdom Bacteria --prefix GCF_013340765.1 --locustag GCF_013340765.1 --strain GCF_013340765.1 --outdir GCF_013340765.1_prokka_wd GCF_013340765.1.gtdb.fna
+
+
+##########################################################################################
 
 
 # run prokka
