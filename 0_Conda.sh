@@ -1,4 +1,77 @@
 
+##########################################################################################
+############################# Install Anaconda on HKUST HPC3 #############################
+##########################################################################################
+
+cd /home/ocessongwz/Software
+curl -O https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+bash Anaconda3-2023.09-0-Linux-x86_64.sh
+
+#    Installed package of scikit-learn can be accelerated using scikit-learn-intelex.
+#    More details are available here: https://intel.github.io/scikit-learn-intelex
+#
+#    For example:
+#
+#        $ conda install scikit-learn-intelex
+#        $ python -m sklearnex my_application.py
+
+
+# to automatically initialize conda
+#conda config --set auto_activate_base false
+conda config --set auto_activate_base true
+
+# You can undo this by running `conda init --reverse $SHELL`
+
+
+# To activate conda's base environment in your current shell session:
+eval "$(/home/ocessongwz/anaconda3/bin/conda shell.bash hook)" 
+
+
+# To install conda's shell functions for easier access, first activate, then:
+conda init
+
+
+# list available channels
+conda config --show channels
+
+
+# add channel
+conda config --add channels conda-forge
+conda config --add channels bioconda
+
+
+# install software to the base environment
+conda activate base
+pip install BioSAK
+pip3 install TreeSAK
+pip3 install MetaCHIP
+pip3 install MetaCHIP2
+
+
+# install Perl and it's modules in Conda's base environment
+conda install -c bioconda perl-lwp-simple              
+conda update perl
+cpan App::cpanminus
+cpan B::Hooks::EndOfScope
+cpan namespace::clean
+cpan List::MoreUtils
+conda install -c bioconda perl-moose
+conda install -c bioconda perl-moosex-app
+conda install -c bioconda perl-gd
+conda install -c bioconda perl-statistics-descriptive
+conda install -c bioconda perl-moosex-getopt
+conda install -c bioconda perl-bio-featureio
+conda install -c bioconda iqtree  # for iqtree 2.2.6
+
+
+# You may want to add the following line to your perl script to disable warning messages
+no warnings 'experimental';
+
+
+##########################################################################################
+##########################################################################################
+##########################################################################################
+
 # install with 
 conda create -n CoverM_env -c bioconda coverm
 # create a conda environment

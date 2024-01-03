@@ -1,4 +1,14 @@
 
+################################### install OMA on hpc3 ##################################
+
+cd /home/ocessongwz/scratch/Software
+
+wget -O oma.tgz https://omabrowser.org/standalone/OMA.2.5.0.tgz --no-check-certificate
+tar xvzf oma.tgz
+cd OMA.2.5.0
+./install.sh /home/ocessongwz/scratch/Software/OMA.2.5.0
+
+
 ################################### install OMA on Mac ###################################
 
 cd /Users/songweizhi/Software
@@ -6,15 +16,6 @@ wget -O oma.tgz https://omabrowser.org/standalone/OMA.2.5.0.tgz
 tar xvzf oma.tgz
 cd OMA.2.5.0
 ./install.sh /Users/songweizhi/Software
-
-
-
-cd /home-user/wzsong/Software
-wget -O oma.tgz https://omabrowser.org/standalone/OMA.2.5.0.tgz
-tar xvzf oma.tgz
-cd OMA.2.5.0
-./install.sh /home-user/wzsong/Software
-
 
 
 ################################## install OMA on Katana #################################

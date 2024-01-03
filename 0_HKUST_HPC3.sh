@@ -9,23 +9,27 @@ ssh ocessongwz@hpc3.ust.hk -o "ServerAliveInterval 10"
 # JOB SCHEDULING SYSTEM (SLURM)
 # https://itsc.hkust.edu.hk/services/academic-teaching-support/high-performance-computing/hpc3-cluster/jobs
 
-# To submit job:	
-sbatch <your_job_script>
+sbatch metachip.sh			# To submit a job
+scancel 1044191				# To cancel a running or pending job
+scontrol show job 1044191	# To view job details
+squeue -u ocessongwz		# To view the queue status
+sinfo						# To check what queues (partitions) are available
 
-# To cancel a running or pending job:	
-scancel <your_slurm_jobid>
 
-# To view detailed information of your job:	
-scontrol show job <your_slurm_jobid>
+##########################################################################################
+################################## some customisations ###################################
+##########################################################################################
 
-# To check what queues (partitions) are available:	
-sinfo
+ln -s /scratch/PI/ocessongwz /home/ocessongwz/scratch
 
-# To view the queue status:	
-squeue
+ln -s /scratch/PI/boqianpy /home/ocessongwz/boqianpy
+ln -s /scratch/PI/boqianpy /scratch/PI/ocessongwz/boqianpy
 
-# To view the queue status of your job:	
-squeue -u $USER
+ln -s /scratch/PI/boqianpy/App /home/ocessongwz/App
+ln -s /scratch/PI/boqianpy/App /scratch/PI/ocessongwz/App
+
+ln -s /scratch/PI/boqianpy/weizhi /home/ocessongwz/qscratch
+ln -s /scratch/PI/boqianpy/weizhi /scratch/PI/ocessongwz/qscratch
 
 
 ##########################################################################################

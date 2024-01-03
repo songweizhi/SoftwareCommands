@@ -1,4 +1,6 @@
 
+# install perl modules
+perl -MCPAN -e"install Runtime"
 perl -MCPAN -e"install Moose"
 perl -MCPAN -e"install MooseX"
 perl -MCPAN -e"install MooseX::Types::Path::Class"

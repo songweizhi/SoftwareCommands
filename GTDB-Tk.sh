@@ -2,14 +2,14 @@
 ############################## install GTDBTk on HKUST hpc3 ##############################
 
 conda create -n gtdbtk -c conda-forge -c bioconda gtdbtk=2.3.2
-source activate gtdbtk
+conda activate gtdbtk
 export GTDBTK_DATA_PATH=/scratch/PI/boqianpy/Database/GTDB-Tk_r214/release214
 
 
 ################################ run GTDBTk on HKUST hpc3 ################################
 
 module load anaconda3
-source activate gtdbtk
+conda activate gtdbtk
 cd /scratch/PI/ocessongwz/MetaCHIP_wd
 export GTDBTK_DATA_PATH=/scratch/PI/boqianpy/Database/GTDB-Tk_r214/release214
 gtdbtk classify_wf --cpus 12 --pplacer_cpus 1 --genome_dir gamma_ind_genomes_collapsed --extension fasta --skip_ani_screen --out_dir gamma_ind_genomes_collapsed_GTDB_r207 --prefix gamma_ind_genomes_collapsed
