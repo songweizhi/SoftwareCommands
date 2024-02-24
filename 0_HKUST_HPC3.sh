@@ -14,6 +14,8 @@ scancel 1044191				# To cancel a running or pending job
 scontrol show job 1044191	# To view job details
 squeue -u ocessongwz		# To view the queue status
 sinfo						# To check what queues (partitions) are available
+squeue -A boqianpy			# To view the queue status
+squeue -A oces				# To view the queue status
 
 
 ##########################################################################################

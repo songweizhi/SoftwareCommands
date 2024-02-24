@@ -61,11 +61,55 @@ conda install -c bioconda perl-gd
 conda install -c bioconda perl-statistics-descriptive
 conda install -c bioconda perl-moosex-getopt
 conda install -c bioconda perl-bio-featureio
-conda install -c bioconda iqtree  # for iqtree 2.2.6
-
+conda install -c bioconda iqtree=2.2.6
+conda install bioconda::blast==2.15.0
+conda install bioconda::mafft
+conda install bioconda::trimal
+# conda install etetoolkit::phylobayes
+# conda install bioconda::phylobayes-mpi
 
 # You may want to add the following line to your perl script to disable warning messages
 no warnings 'experimental';
+
+
+##########################################################################################
+############################# Install Anaconda on HKUST HPC3 #############################
+##########################################################################################
+
+conda create -n mybase -c conda-forge -c bioconda gtdbtk=2.3.2
+conda activate mybase
+conda install bioconda::blast=2.15.0
+pip install BioSAK
+pip3 install TreeSAK
+pip3 install MetaCHIP
+pip3 install MetaCHIP2
+cpan App::cpanminus
+cpan B::Hooks::EndOfScope
+cpan namespace::clean
+cpan List::MoreUtils
+conda install -c bioconda perl-moose
+conda install -c bioconda perl-moosex-app
+conda install -c bioconda perl-gd
+conda install -c bioconda perl-statistics-descriptive
+conda install -c bioconda perl-moosex-getopt
+conda install -c bioconda perl-bio-featureio
+conda install -c bioconda iqtree=2.2.6
+conda install bioconda::mafft
+conda install bioconda::trimal
+
+
+##########################################################################################
+##########################################################################################
+##########################################################################################
+
+# To list all of the packages in the active environment, use:
+conda list
+
+# To list all of the packages in a deactivated environment, use:
+conda list -n myenv
+
+# To remove installed package
+conda remove blast
 
 
 ##########################################################################################
