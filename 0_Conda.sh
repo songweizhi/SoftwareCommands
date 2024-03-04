@@ -1,4 +1,10 @@
 
+# run the following command to avoid keep solving environment
+conda update -n base conda
+conda install -n base conda-libmamba-solver
+conda config --set solver libmamba
+
+
 ##########################################################################################
 ############################# Install Anaconda on HKUST HPC3 #############################
 ##########################################################################################
@@ -97,6 +103,30 @@ conda install -c bioconda iqtree=2.2.6
 conda install bioconda::mafft
 conda install bioconda::trimal
 
+# install R to mybase environment
+# conda install conda-forge::r-base
+conda deactivate
+conda deactivate
+conda activate mybase
+conda config --set channel_priority flexible
+#conda install -c r r r-essentials
+conda install -c bioconda r-base
+conda activate mybase
+
+# install R packages
+R
+install.packages("optparse")
+install.packages("plyr")
+install.packages("dbplyr")
+install.packages("dplyr")
+install.packages("tidyr")
+install.packages("ggplot2")
+install.packages("data.table")
+install.packages("RColorBrewer")
+install.packages("gplots")
+install.packages("ape")
+
+
 
 ##########################################################################################
 ##########################################################################################
@@ -156,3 +186,4 @@ q()
 git clone https://github.com/qunfengdong/BLCA.git
 git clone git://git.joeyh.name/moreutils
 export PATH=/home/z5039045/moreutils:$PATH
+

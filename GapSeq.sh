@@ -1,3 +1,261 @@
+##########################################################################################
+################################# install gapseq on hpc3 #################################
+##########################################################################################
+
+# run the following command to avoid keep solving environment
+conda update -n base conda
+conda install -n base conda-libmamba-solver
+conda config --set solver libmamba
+
+# install gapseq
+cd /home/ocessongwz/scratch/Software/gapseq
+conda env create -n gapseq-dev --file gapseq_env.yml
+conda activate gapseq-dev 
+R -e 'install.packages("CHNOSZ", repos="http://cran.us.r-project.org")'
+wget https://cran.r-project.org/src/contrib/Archive/sybilSBML/sybilSBML_3.1.2.tar.gz
+R CMD INSTALL --configure-args=" --with-sbml-include=$CONDA_PREFIX/include --with-sbml-lib=$CONDA_PREFIX/lib" sybilSBML_3.1.2.tar.gz
+bash ./src/update_sequences.sh
+
+
+################################# run gapseq on hpc3 #################################
+
+conda activate gapseq-dev
+gapseq find -p all -t Archaea -b 100 -c 70 -l all -y /scratch/PI/ocessongwz/Sponge_2023_12_01/6_combined_genomes_dereplicated_207/APA_bin56.fna > APA_bin56_stdout.txt
+
+
+
+# example
+/srv/scratch/z5039045/Softwares/gapseq/gapseq find -p carbo -b 100 -c 70 -l all -y genome_folder/APA_bin_6.fna
+# Options:
+#√   -p keywords such as pathways or subsystems (for example amino,nucl,cofactor,carbo,polyamine)
+#   -e Search by ec numbers (comma separated)
+#   -r Search by enzyme name (colon separated)
+#   -d Database: vmh or seed (default: seed)
+#√   -t Taxonomic range for sequences to be downloaded (default: Bacteria)
+#√   -b Bit score cutoff for local alignment (default: 200)
+#   -i Identity cutoff for local alignment (default: 0)
+#√   -c Coverage cutoff for local alignment (default: 75)
+#   -s Strict candidate reaction handling (do _not_ use pathway completeness, key kenzymes and operon structure to infere if imcomplete pathway could be still present (default: false)
+#   -u Suffix used for output files (default: pathway keyword)
+#   -a blast hits back against uniprot enzyme database
+#   -n Consider superpathways of metacyc database
+#√   -l Select the pathway database (MetaCyc(2712), KEGG(523), SEED(666), all(3922); default: metacyc,custom)
+#   -o Only list pathways found for keyword; default false)
+#   -x Do not blast only list pathways, reactions and check for available sequences; default false
+#   -q Include sequences of hits in log files; default false
+#   -v Verbose level, 0 for nothing, 1 for pathway infos, 2 for full (default 1)
+#   -k Do not use parallel
+#   -g Exhaustive search, continue blast even when cutoff is reached (default false)
+#   -z Quality of sequences for homology search: 1:only reviewed (swissprot), 2:unreviewed only if reviewed not available, 3:reviewed+unreviewed, 4:only unreviewed (default 2)
+#   -m Limit pathways to taxonomic range (default )
+
+
+
+
+##########################################################################################
+################################## install gapseq (CUHK) #################################
+##########################################################################################
+
+# Cloning the development version of gapseq
+git clone https://github.com/jotech/gapseq
+cd gapseq
+
+# Create and activate a conda environment "gapseq-dev"
+conda env create -n gapseq-dev --file gapseq_env.yml
+conda activate gapseq-dev
+
+# install one additional R-package
+R -e 'install.packages("CHNOSZ", repos="http://cran.us.r-project.org")'
+# R -e 'install.packages("ape", repos="http://cran.us.r-project.org")'
+
+# Download & Install R-package 'sybilSBML'
+wget https://cran.r-project.org/src/contrib/Archive/sybilSBML/sybilSBML_3.1.2.tar.gz
+R CMD INSTALL --configure-args=" --with-sbml-include=$CONDA_PREFIX/include --with-sbml-lib=$CONDA_PREFIX/lib" sybilSBML_3.1.2.tar.gz
+rm sybilSBML_3.1.2.tar.gz
+
+# Download reference sequence data
+cd /home-user/wzsong/Software/gapseq
+bash ./src/update_sequences.sh
+
+
+##########################################################################################
+################################# install GapSeq on Gadi #################################
+##########################################################################################
+
+# install automake
+cd /scratch/du5/wzs561/software
+tar zxvf automake-1.16.tar.gz
+cd automake-1.16
+./configure --prefix /scratch/du5/wzs561/software/automake-1.16
+make
+make check 
+make install
+export PATH=/scratch/du5/wzs561/software/automake-1.16/bin:$PATH
+
+
+# install bc
+cd /scratch/du5/wzs561/software
+tar zxvf bc-1.07.tar.gz
+cd bc-1.07
+./configure --prefix /scratch/du5/wzs561/software/bc-1.07
+make
+make check 
+make install
+export PATH=/scratch/du5/wzs561/software/bc-1.07/bin:$PATH
+
+
+# install hmmer
+cd /scratch/du5/wzs561/software
+tar zxvf hmmer-3.3.2.tar.gz
+cd hmmer-3.3.2
+./configure --prefix /scratch/du5/wzs561/software/hmmer-3.3.2
+make
+make check 
+make install
+export PATH=/scratch/du5/wzs561/software/hmmer-3.3.2/bin:$PATH
+
+
+# install barrnap
+module load git/2.24.1
+module load bedtools/2.28.0
+cd /scratch/du5/wzs561/software
+git clone https://github.com/tseemann/barrnap.git
+export PATH=/scratch/du5/wzs561/software/barrnap/bin:$PATH
+
+
+# install glpk
+tar zxvf glpk-4.65.tar.gz
+cd glpk-4.65
+./configure --prefix /scratch/du5/wzs561/software/glpk-4.65
+make
+make check
+make install   
+export PATH=/scratch/du5/wzs561/software/glpk-4.65/bin:$PATH
+
+
+# install EXONERATE-2.2.0-x86_64
+export PATH=/scratch/du5/wzs561/software/bc-1.07/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/hmmer-3.3.2/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/barrnap/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/glpk-4.65/bin:$PATH
+cd /scratch/du5/wzs561/software
+tar zxvf exonerate-2.2.0-x86_64.tar.gz
+export PATH=/scratch/du5/wzs561/software/exonerate-2.2.0-x86_64/bin:$PATH
+
+
+# install R packages
+module load R/4.0.0
+module load intel-compiler/2020.2.254
+export PATH=/scratch/du5/wzs561/software/glpk-4.65/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/glpk-4.65/src:$PATH
+R
+install.packages("data.table")
+install.packages("stringr")
+install.packages("sybil")
+install.packages("getopt")
+install.packages("reshape2")
+install.packages("doParallel")
+install.packages("foreach")
+install.packages("R.utils")
+install.packages("stringi")
+install.packages("CHNOSZ")
+install.packages("jsonlite")
+install.packages("BiocManager")
+install.packages("glpkAPI")
+
+
+# install gapseq
+cd /scratch/du5/wzs561/software/gapseq
+git clone https://github.com/jotech/gapseq
+export PATH=/scratch/du5/wzs561/software/gapseq:$PATH
+
+
+sudo yum install ncbi-blast+ git glpk-devel BEDTools exonerate hmmer bc
+git clone https://github.com/tseemann/barrnap.git
+export PATH=$PATH:barrnap/bin/barrnap # needs to be permanent => .bashrc ?
+R -e 'install.packages(c("data.table", "stringr", "sybil", "getopt", "reshape2", "doParallel", "foreach", "R.utils", "stringi", "glpkAPI", "CHNOSZ", "jsonlite"))'
+R -e 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager"); BiocManager::install("Biostrings")'
+git clone https://github.com/jotech/gapseq && cd gapseq
+
+
+####################################### run GapSeq #######################################
+
+module load pangeo/2020.05
+source ~/mypython3env/bin/activate
+module load bedtools/2.28.0
+module load intel-compiler/2020.2.254
+module load blast/2.10.1
+export PATH=/apps/blast/2.10.1/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/hmmer-3.3.2/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/barrnap/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/glpk-4.65/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/glpk-4.65/src:$PATH
+export PATH=/scratch/du5/wzs561/software/exonerate-2.2.0-x86_64/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/gapseq:$PATH
+module load R/4.0.0
+cd /scratch/du5/wzs561/Test_gapseq
+gapseq find -p carbo -b 100 ecoli_1.fna > ecoli_1-carbo-stdout.txt
+gapseq find -p carbo -b 100 ecoli_2.fna > ecoli_2-carbo-stdout.txt
+gapseq find -p carbo -b 100 ecoli_3.fna > ecoli_3-carbo-stdout.txt
+gapseq find -p carbo -b 100 ecoli_4.fna > ecoli_4-carbo-stdout.txt
+
+
+
+gapseq find -p carbo -b 100 ecoli_1.fna > ecoli_1-carbo-stdout.txt
+gapseq find -p carbo -b 100 ecoli_2.fna > ecoli_2-carbo-stdout.txt
+gapseq find -p carbo -b 100 ecoli_3.fna > ecoli_3-carbo-stdout.txt
+
+
+# on Katana
+module load python/3.7.3
+module load perl/5.28.0
+module load blast+/2.10.1
+module load hmmer/3.3
+module load prodigal/2.6.3
+module load git/2.22.0
+module load bedtools/2.27.1
+module load glpk/4.65
+module load barrnap/0.9
+module load gcc/7.3.0
+module load exonerate/2.2.0
+# module load parallel/20190522
+module load parallel/20200722
+module unload R
+module load R/3.6.1
+module load cplex/12.9.0-academic  
+export PATH=/srv/scratch/z5039045/Softwares/gapseq2021:$PATH
+cd /srv/scratch/z5039045/Test_gapseq
+gapseq find -p carbo -b 100 ecoli_1.fna > ecoli_1-carbo-stdout.txt
+
+
+###################################### run detectCFP #####################################
+
+# install Prodigal
+cd /scratch/du5/wzs561/software
+mkdir Prodigal
+unzip Prodigal-GoogleImport.zip 
+cd Prodigal-GoogleImport
+make install INSTALLDIR=/scratch/du5/wzs561/software/Prodigal
+export PATH=/scratch/du5/wzs561/software/Prodigal:$PATH
+
+module load pangeo/2020.05
+source ~/mypython3env/bin/activate
+module load R/4.0.0
+module load bedtools/2.28.0
+module load intel-compiler/2020.2.254
+module load blast/2.10.1
+export PATH=/scratch/du5/wzs561/software/hmmer-3.3.2/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/barrnap/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/glpk-4.65/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/glpk-4.65/src:$PATH
+export PATH=/scratch/du5/wzs561/software/exonerate-2.2.0-x86_64/bin:$PATH
+export PATH=/scratch/du5/wzs561/software/gapseq:$PATH
+export PATH=/scratch/du5/wzs561/software/Prodigal:$PATH
+cd /scratch/du5/wzs561/gapseq_test
+detectCFP -p GadiTest2 -g mag_files -x fna -hmm combined.HMM -k pathwaysXhmmfiles.txt -t 1 -force -taxon mag_taxon.txt -dynamic_pcc -cpl mag_cpl.txt -faa faa_files -force
+
+
+
 
 ###################################### Installation ######################################
 
@@ -122,21 +380,9 @@ cd /srv/scratch/z5039045/GapSeq_Sponge_and_Coral_MAGs/Test_GapSeq
 #√     -r|--relaxed.constraints    Save final model as unconstraint network (i.e. all exchange reactions are open). Default: FALSE
 
 
-
-
 # test with customized pathways
 cd /srv/scratch/z5039045/gapseq_test
 /srv/scratch/z5039045/Softwares/gapseq_test/gapseq find -p all -b 100 -c 70 -l all -y -n APA_bin_6.fna
 
 /srv/scratch/z5039045/Softwares/gapseq/gapseq find-transport -h
-
-
-
-
-
-
-
-
-
-
 
