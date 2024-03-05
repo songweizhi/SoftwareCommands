@@ -51,6 +51,22 @@ gapseq find -p all -t Archaea -b 100 -c 70 -l all -y /scratch/PI/ocessongwz/Spon
 
 
 
+# Predict pathways
+/scratch/PI/boqianpy/shanzhang/software/gapseq/gapseq_v20231213/gapseq find -p all -t Bacteria -b 100 -c 70 -l all -y /scratch/PI/boqianpy/shanzhang/03_Maize/01_MAGs/G6_1_Chromosome.fasta > /scratch/PI/boqianpy/shanzhang/03_Maize/03_Gapseq_models/report.sh
+
+# Predict transporters
+/scratch/PI/boqianpy/shanzhang/software/gapseq/gapseq_v20231213/gapseq find-transport -b 100 -c 70 /scratch/PI/boqianpy/shanzhang/03_Maize/01_MAGs/G6_1_Chromosome.fasta
+
+# Create draft model
+/scratch/PI/boqianpy/shanzhang/software/gapseq/gapseq_v20231213/gapseq draft -r /scratch/PI/boqianpy/shanzhang/03_Maize/03_Gapseq_models/G6_1_Chromosome-all-Reactions.tbl -t /scratch/PI/boqianpy/shanzhang/03_Maize/03_Gapseq_models/G6_1_Chromosome-Transporter.tbl -p /scratch/PI/boqianpy/shanzhang/03_Maize/03_Gapseq_models/G6_1_Chromosome-all-Pathways.tbl -c /scratch/PI/boqianpy/shanzhang/03_Maize/01_MAGs/G6_1_Chromosome.fasta -u 100 -l 50 -b neg
+
+# Predicting a growth medium
+/scratch/PI/boqianpy/shanzhang/software/gapseq/gapseq_v20231213/gapseq medium -m G6_1_Chromosome-draft.RDS -p /scratch/PI/boqianpy/shanzhang/03_Maize/03_Gapseq_models/G6_1_Chromosome-all-Pathways.tbl
+
+# Use the medium to create final model
+G6_1_Chromosome_diet=/scratch/PI/boqianpy/shanzhang/03_Maize/03_Gapseq_models/G6_1_Chromosome-medium.csv
+/scratch/PI/boqianpy/shanzhang/software/gapseq/gapseq_v20231213/gapseq fill -m ./G6_1_Chromosome-draft.RDS -n ${G6_1_Chromosome_diet} -c ./G6_1_Chromosome-rxnWeights.RDS -g ./G6_1_Chromosome-rxnXgenes.RDS -b 50 -o ./20231216_medium_G6_1_Chromosome -r TRUE
+
 
 ##########################################################################################
 ################################## install gapseq (CUHK) #################################
