@@ -105,13 +105,9 @@ conda install bioconda::trimal
 
 # install R to mybase environment
 # conda install conda-forge::r-base
-conda deactivate
-conda deactivate
-conda activate mybase
-conda config --set channel_priority flexible
-#conda install -c r r r-essentials
+# conda config --set channel_priority flexible
+# conda install -c r r r-essentials
 conda install -c bioconda r-base
-conda activate mybase
 
 # install R packages
 R
@@ -127,10 +123,12 @@ install.packages("gplots")
 install.packages("ape")
 
 
+##########################################################################################
+##########################################################################################
+##########################################################################################
 
-##########################################################################################
-##########################################################################################
-##########################################################################################
+# To list all created conda environments
+conda info --envs
 
 # To list all of the packages in the active environment, use:
 conda list

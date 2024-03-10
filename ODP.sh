@@ -16,9 +16,16 @@ make -f Makefile_1core
 #################################### run odp on hpc3 #####################################
 
 conda activate odp
-cd /scratch/PI/ocessongwz/odp
+cd /scratch/PI/ocessongwz/odp_wd/C_elegans_and_H_sapiens
 
 
+/home/ocessongwz/Software/odp/tests/testdb/mini_hydra/mini_hydra.chrom
+/home/ocessongwz/Software/odp/tests/testdb/mini_hydra/mini_hydra.fa
+/home/ocessongwz/Software/odp/tests/testdb/mini_hydra/mini_hydra.pep
 
+
+/home/ocessongwz/Software/odp/tests/testdb/mini_urchin/mini_urchin.chrom
+/home/ocessongwz/Software/odp/tests/testdb/mini_urchin/mini_urchin.fa
+/home/ocessongwz/Software/odp/tests/testdb/mini_urchin/mini_urchin.pep
 
 

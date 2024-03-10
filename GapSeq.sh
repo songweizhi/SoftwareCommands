@@ -50,7 +50,6 @@ gapseq find -p all -t Archaea -b 100 -c 70 -l all -y /scratch/PI/ocessongwz/Spon
 #   -m Limit pathways to taxonomic range (default )
 
 
-
 # Predict pathways
 /scratch/PI/boqianpy/shanzhang/software/gapseq/gapseq_v20231213/gapseq find -p all -t Bacteria -b 100 -c 70 -l all -y /scratch/PI/boqianpy/shanzhang/03_Maize/01_MAGs/G6_1_Chromosome.fasta > /scratch/PI/boqianpy/shanzhang/03_Maize/03_Gapseq_models/report.sh
 
@@ -66,6 +65,36 @@ gapseq find -p all -t Archaea -b 100 -c 70 -l all -y /scratch/PI/ocessongwz/Spon
 # Use the medium to create final model
 G6_1_Chromosome_diet=/scratch/PI/boqianpy/shanzhang/03_Maize/03_Gapseq_models/G6_1_Chromosome-medium.csv
 /scratch/PI/boqianpy/shanzhang/software/gapseq/gapseq_v20231213/gapseq fill -m ./G6_1_Chromosome-draft.RDS -n ${G6_1_Chromosome_diet} -c ./G6_1_Chromosome-rxnWeights.RDS -g ./G6_1_Chromosome-rxnXgenes.RDS -b 50 -o ./20231216_medium_G6_1_Chromosome -r TRUE
+
+
+
+
+
+
+conda activate gapseq-dev
+cd /scratch/PI/ocessongwz/Sponge_2023_12_01/6_combined_genomes_dereplicated_207_GapSeq_wd/test
+
+gapseq find -p all -t Archaea -b 100 -c 70 -l all -y /scratch/PI/ocessongwz/Sponge_2023_12_01/6_combined_genomes_dereplicated_207/GCA018668425_1.fna
+# Number of pathways to be considered: 4002
+
+gapseq find -p all -t Archaea -b 100 -c 70 -l MetaCyc -y /scratch/PI/ocessongwz/Sponge_2023_12_01/6_combined_genomes_dereplicated_207/GCA018668425_1.fna
+# Number of pathways to be considered: 3105
+
+gapseq find -p all -t Archaea -b 100 -c 70 -l KEGG -y /scratch/PI/ocessongwz/Sponge_2023_12_01/6_combined_genomes_dereplicated_207/GCA018668425_1.fna
+# Number of pathways to be considered: 182
+
+gapseq find -p all -t Archaea -b 100 -c 70 -l SEED -y /scratch/PI/ocessongwz/Sponge_2023_12_01/6_combined_genomes_dereplicated_207/GCA018668425_1.fna
+# Number of pathways to be considered: 666
+
+gapseq find -p all -t Archaea -b 100 -c 70 -l custom -y -T /scratch/PI/ocessongwz/Software/gapseq_tmp_dir /scratch/PI/ocessongwz/Sponge_2023_12_01/6_combined_genomes_dereplicated_207/GCA018668425_1.fna 
+# Number of pathways to be considered: 50
+
+gapseq find -p all -t Archaea -b 100 -c 70 -l MetaCyc,KEGG -y /scratch/PI/ocessongwz/Sponge_2023_12_01/6_combined_genomes_dereplicated_207/GCA018668425_1.fna
+# Number of pathways to be considered: 3287
+
+
+
+
 
 
 ##########################################################################################
