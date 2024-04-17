@@ -1,6 +1,17 @@
 
 ################################### install OMA on hpc3 ##################################
 
+cd /scratch/PI/ocessongwz/Software
+wget -O OMA.2.6.0.tgz wget https://omabrowser.org/standalone/OMA.2.6.0.tgz --no-check-certificate
+tar xvzf OMA.2.6.0.tgz
+cd OMA.2.6.0
+./install.sh /scratch/PI/ocessongwz/Software/OMA.2.6.0
+
+# add the following line to 
+export PATH=$PATH:/scratch/PI/ocessongwz/Software/OMA.2.6.0/OMA/bin
+
+################################### install OMA on hpc3 ##################################
+
 cd /home/ocessongwz/scratch/Software
 
 wget -O oma.tgz https://omabrowser.org/standalone/OMA.2.5.0.tgz --no-check-certificate

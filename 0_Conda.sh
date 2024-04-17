@@ -67,7 +67,6 @@ conda install -c bioconda perl-gd
 conda install -c bioconda perl-statistics-descriptive
 conda install -c bioconda perl-moosex-getopt
 conda install -c bioconda perl-bio-featureio
-conda install -c bioconda iqtree=2.2.6
 conda install bioconda::blast==2.15.0
 conda install bioconda::mafft
 conda install bioconda::trimal
@@ -89,6 +88,7 @@ pip install BioSAK
 pip3 install TreeSAK
 pip3 install MetaCHIP
 pip3 install MetaCHIP2
+pip install virtualenv
 cpan App::cpanminus
 cpan B::Hooks::EndOfScope
 cpan namespace::clean
@@ -108,8 +108,12 @@ conda install bioconda::trimal
 # conda config --set channel_priority flexible
 # conda install -c r r r-essentials
 conda install -c bioconda r-base
+conda install -c bioconda r-base=4.1.2
+
+
 
 # install R packages
+conda activate mybase
 R
 install.packages("optparse")
 install.packages("plyr")
@@ -129,6 +133,24 @@ install.packages("ape")
 
 # To list all created conda environments
 conda info --envs
+
+checkm                   /home/ocessongwz/.conda/envs/checkm
+ezaaienv                 /home/ocessongwz/.conda/envs/ezaaienv
+fastaaienv               /home/ocessongwz/.conda/envs/fastaaienv
+gtdbtk                   /home/ocessongwz/.conda/envs/gtdbtk
+metachip2env             /home/ocessongwz/.conda/envs/metachip2env
+metachip2env_test        /home/ocessongwz/.conda/envs/metachip2env_test
+metachip_env             /home/ocessongwz/.conda/envs/metachip_env
+prokka                   /home/ocessongwz/.conda/envs/prokka
+                         /home/ocessongwz/anaconda3
+                         /home/ocessongwz/anaconda3/envs/GRiD
+                         /home/ocessongwz/anaconda3/envs/mybase
+                         /home/ocessongwz/anaconda3/envs/mypython3env
+                         /home/ocessongwz/anaconda3/envs/odp
+base                  *  /home/ocessongwz/miniforge3
+gapseq-dev               /home/ocessongwz/miniforge3/envs/gapseq-dev
+mybase                   /home/ocessongwz/miniforge3/envs/mybase
+odp                      /home/ocessongwz/miniforge3/envs/odp
 
 # To list all of the packages in the active environment, use:
 conda list
